@@ -23,6 +23,7 @@ sudo ufw enable
 
 UFW was successfully enabled and started applying default rules.
 
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/1.png)
 ---
 
 ##  Step 2: Block Port 23 (Telnet)
@@ -35,6 +36,7 @@ sudo ufw deny 23
 
 This blocks any inbound traffic to port 23 (IPv4 and IPv6).
 
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/2.png)
 ---
 
 ##  Step 3: Allow Port 22 (SSH)
@@ -47,6 +49,10 @@ sudo ufw allow 22
 
 This ensures that SSH connections are permitted.
 
+
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/3.png)
+
+
 ---
 
 ##  Step 4: Check Firewall Rules
@@ -56,6 +62,7 @@ Listed all firewall rules:
 ```bash
 sudo ufw status numbered
 ```
+
 
 ###  Output:
 ```bash
@@ -67,6 +74,11 @@ Status: active
 [ 4] 22 (v6)                    ALLOW IN    Anywhere (v6)
 ```
 
+
+
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/4.png)
+
+
 ---
 
 ##  Step 5: Test Telnet Blocking
@@ -76,6 +88,9 @@ Status: active
 ```bash
 sudo apt install telnet
 ```
+
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/5.png)
+
 
 ### B. Attempt to connect:
 
@@ -91,6 +106,8 @@ telnet: Unable to connect to remote host: Connection refused
 
 This confirms port 23 is blocked by the firewall.
 
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/6.png)
+
 ---
 
 ## 🧹 Step 6: Remove Port 23 Rule (Cleanup)
@@ -101,12 +118,16 @@ Checked current rule numbers:
 sudo ufw status numbered
 ```
 
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/7.png)
+
 Deleted port 23 rules (both v4 & v6):
 
 ```bash
 sudo ufw delete 1
 sudo ufw delete 3
 ```
+
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/8.png)
 
 This restored the firewall to its original state.
 
@@ -129,6 +150,8 @@ Status: active
 ```
 
 Only SSH (port 22) is allowed.
+
+![image alt](https://github.com/devalla-jwala/Task-4-Setup-and-Use-a-Firewall-on-Windows-Linux-Elevate-Labs-/blob/f3248061f9d00714052ec2c9ea32ab39bc1097eb/9.png)
 
 ---
 
